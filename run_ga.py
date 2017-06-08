@@ -22,3 +22,26 @@ neg_fact = 0
 exp_fact = 100
 cp = 0.2
 mp = 0.01
+
+def pop_ivars_dvar(bin_pop_file,ivar_file,dvar_file):
+    inp = open(bin_pop_file,'r')
+    pop = inp.read().split('\n')
+    inp.close()
+
+    # inval
+    inp = open(ivar_file,'r')
+    ivars = inp.read().split('\n')
+    inp.close()
+
+    # dependent variable
+    inp = open(dvar_file,'r')
+    dvar = inp.read().split('\n')
+    # print(dvar)
+    inp.close()
+    try:
+        del inp
+    except:
+        pass
+#     print(dvar)
+    return pop, ivars, dvar
+
