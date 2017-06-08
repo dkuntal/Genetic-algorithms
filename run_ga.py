@@ -45,3 +45,18 @@ def pop_ivars_dvar(bin_pop_file,ivar_file,dvar_file):
 #     print(dvar)
     return pop, ivars, dvar
 
+
+
+
+
+
+
+def run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg_fact,exp_fact):
+    
+    fit_file_write = open(fit_file,'w')
+    mindiff = 9999999999
+    
+    for i_gen in range(generations):
+        print('gen',i_gen)
+        pop, ivars, dvar = pop_ivars_dvar(bin_pop_file,ivar_file,dvar_file)
+
