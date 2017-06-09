@@ -45,6 +45,34 @@ def pop_ivars_dvar(bin_pop_file,ivar_file,dvar_file):
 #     print(dvar)
     return pop, ivars, dvar
 
+def calc_fitness(pop_size,ivars,n_ivar,pop,dvar,fact,neg_fact,exp_fact,sol_size):
+    fits = []
+    diffs = []
+    for i in range(pop_size):
+    #     print(dvar[i])
+        fit = []
+        diff = []
+        ivar = []
+        ivar_ = ivars[i].split(' ')
+        for k in range(sol_size):
+            for j in range(n_ivar):
+        #         print(ivar_)
+        #         print(ivar_[j])
+                ivar.append(int(ivar_[j]))
+            fit_, diff_ = fitness.expo_fit(pop[i],ivar,float(dvar[i]),fact,neg_fact,exp_fact)
+            fit.append(fit_)
+            diff.append(diff_)
+        diffs.append(np.sum(diff))
+        fits.append(np.prod(fit))
+        
+    try:
+        del ivar, ivar_
+    except:
+        pass
+    return fits,diffs
+
+
+
 
 
 
