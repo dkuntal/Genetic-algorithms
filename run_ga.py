@@ -71,6 +71,13 @@ def calc_fitness(pop_size,ivars,n_ivar,pop,dvar,fact,neg_fact,exp_fact,sol_size)
         pass
     return fits,diffs
 
+def sel_prob(fit,pop_size):
+    prob = []
+    for i in range(pop_size):
+        prob.append(fit[i]/sum(fit))
+    return prob
+
+
 
 
 
