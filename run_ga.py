@@ -77,6 +77,16 @@ def sel_prob(fit,pop_size):
         prob.append(fit[i]/sum(fit))
     return prob
 
+def cu_prob(fit,pop_size):
+    cuprob = []
+    temp = 0
+    for i in range(pop_size):
+        temp += fit[i]/sum(fit)
+        cuprob.append(temp)
+    del temp
+    return cuprob
+
+
 
 
 
