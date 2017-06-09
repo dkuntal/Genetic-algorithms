@@ -86,6 +86,20 @@ def cu_prob(fit,pop_size):
     del temp
     return cuprob
 
+def roul_wheel_sel(pop,cuprob,n_offsp):
+    offsp = []
+    for i in range(n_offsp):
+        r = np.random.random()
+        for j in range(len(pop)):
+            
+            off = pop[len(pop)-1]
+            if r < cuprob[j]:
+                off = pop[j]
+                break
+        offsp.append(off)
+    return offsp
+
+
 
 
 
