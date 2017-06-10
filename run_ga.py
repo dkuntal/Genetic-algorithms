@@ -118,7 +118,9 @@ def run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg
     for i_gen in range(generations):
         print('gen',i_gen)
         pop, ivars, dvar = pop_ivars_dvar(bin_pop_file,ivar_file,dvar_file)
-
+        if i_gen > 0:
+            pop = offsp
+            
         fit,diff = calc_fitness(pop_size,ivars,n_ivar,pop,dvar,fact,neg_fact,exp_fact,sol_size)
         cuprob = cu_prob(fit,pop_size)
 #         print(cuprob)
