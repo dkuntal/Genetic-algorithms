@@ -19,7 +19,7 @@ wt_file = "test/wt.txt"
 generations = 2
 fact = 10
 neg_fact = 0
-exp_fact = 100
+exp_fact = 12000
 cp = 0.2
 mp = 0.01
 
@@ -121,4 +121,4 @@ def run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg
 
         fit,diff = calc_fitness(pop_size,ivars,n_ivar,pop,dvar,fact,neg_fact,exp_fact,sol_size)
 
-run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg_fact,12000)
+run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg_fact,exp_fact)
