@@ -124,6 +124,14 @@ def run_ga(bin_pop_file,ivar_file,dvar_file,n_ivar,pop_size,generations,fact,neg
         fit,diff = calc_fitness(pop_size,ivars,n_ivar,pop,dvar,fact,neg_fact,exp_fact,sol_size)
         cuprob = cu_prob(fit,pop_size)
 #         print(cuprob)
+        offsp = roul_wheel_sel(pop,cuprob,n_offsp=pop_size)
+    
+        for i in range(int(int(pop_size/2))):
+            r = int(np.random.randint(0,n_ivar-1))
+#             print('poppop\n'+pop[2*i]+'\n'+pop[2*i+1]+'\n')
+#             print('r',r)
+            temp1 = offsp[2*i].split(' ')
+            temp2 = offsp[2*i+1].split(' ')
         
         
         
